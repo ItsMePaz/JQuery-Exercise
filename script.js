@@ -44,7 +44,6 @@ $(document).ready(function () {
         const $ul = $("#movie-list");
         $ul.empty();
         movieOptions = movies.map((movie) => movie.titleText.text);
-        /* displayMovies(movieOptions); */
         selectedMovies = displayMovies(movieOptions);
       })
       .catch(function (error) {});
@@ -84,7 +83,6 @@ $(document).ready(function () {
             '<select name="title" id="title" class="title">' +
               '<option value="select">Select a movie</option>' +
               addDropDown() +
-              /*   + */
               "</select><br>"
           );
       }
@@ -108,7 +106,7 @@ $(document).ready(function () {
       $(".title")
         .not(this)
         .each(function () {
-          // Find and remove the selected option
+          // find and remove the selected option
           $(this).find(`option[value="${selectedTitle}"]`).remove();
         });
 
@@ -117,7 +115,6 @@ $(document).ready(function () {
           " is added to the calendar and removed from the dropdown list"
       );
 
-      /* $(this).parent().find("select").remove(); */
       $(this).remove();
     });
 
